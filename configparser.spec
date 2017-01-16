@@ -4,7 +4,7 @@
 #
 Name     : configparser
 Version  : 3.5.0b2
-Release  : 8
+Release  : 9
 URL      : https://pypi.python.org/packages/source/c/configparser/configparser-3.5.0b2.tar.gz
 Source0  : https://pypi.python.org/packages/source/c/configparser/configparser-3.5.0b2.tar.gz
 Summary  : This library brings the updated configparser from Python 3.5 to Python 2.6-3.5.
@@ -37,13 +37,16 @@ python components for the configparser package.
 %setup -q -n configparser-3.5.0b2
 
 %build
+export LANG=C
+export SOURCE_DATE_EPOCH=1484539575
 python2 setup.py build -b py2
 python3 setup.py build -b py3
 
 %install
+export SOURCE_DATE_EPOCH=1484539575
 rm -rf %{buildroot}
-python2 -tt setup.py build -b py2 install --root=%{buildroot}
-python3 -tt setup.py build -b py3 install --root=%{buildroot}
+python2 -tt setup.py build -b py2 install --root=%{buildroot} --force
+python3 -tt setup.py build -b py3 install --root=%{buildroot} --force
 
 %files
 %defattr(-,root,root,-)
