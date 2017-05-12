@@ -1,1 +1,2 @@
-allow_beta
+# allow versions with beta
+special_releases = beta b
