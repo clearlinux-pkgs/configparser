@@ -4,7 +4,7 @@
 #
 Name     : configparser
 Version  : 3.5.0.b2
-Release  : 14
+Release  : 15
 URL      : http://pypi.debian.net/configparser/configparser-3.5.0b2.tar.gz
 Source0  : http://pypi.debian.net/configparser/configparser-3.5.0b2.tar.gz
 Summary  : This library brings the updated configparser from Python 3.5 to Python 2.6-3.5.
@@ -32,6 +32,7 @@ configparser
 %package legacypython
 Summary: legacypython components for the configparser package.
 Group: Default
+Requires: python-core
 
 %description legacypython
 legacypython components for the configparser package.
@@ -50,6 +51,7 @@ python components for the configparser package.
 %package python3
 Summary: python3 components for the configparser package.
 Group: Default
+Requires: python3-core
 
 %description python3
 python3 components for the configparser package.
@@ -63,12 +65,12 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1506873978
+export SOURCE_DATE_EPOCH=1507151886
 python2 setup.py build -b py2
 python3 setup.py build -b py3
 
 %install
-export SOURCE_DATE_EPOCH=1506873978
+export SOURCE_DATE_EPOCH=1507151886
 rm -rf %{buildroot}
 python2 -tt setup.py build -b py2 install --root=%{buildroot} --force
 python3 -tt setup.py build -b py3 install --root=%{buildroot} --force
