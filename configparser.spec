@@ -4,7 +4,7 @@
 #
 Name     : configparser
 Version  : 3.5.0b2
-Release  : 27
+Release  : 28
 URL      : http://pypi.debian.net/configparser/configparser-3.5.0b2.tar.gz
 Source0  : http://pypi.debian.net/configparser/configparser-3.5.0b2.tar.gz
 Summary  : This library brings the updated configparser from Python 3.5 to Python 2.6-3.5.
