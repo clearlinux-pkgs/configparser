@@ -4,7 +4,7 @@
 #
 Name     : configparser
 Version  : 3.5.0
-Release  : 34
+Release  : 35
 URL      : https://files.pythonhosted.org/packages/7c/69/c2ce7e91c89dc073eb1aa74c0621c3eefbffe8216b3f9af9d3885265c01c/configparser-3.5.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/7c/69/c2ce7e91c89dc073eb1aa74c0621c3eefbffe8216b3f9af9d3885265c01c/configparser-3.5.0.tar.gz
 Summary  : This library brings the updated configparser from Python 3.5 to Python 2.6-3.5.
