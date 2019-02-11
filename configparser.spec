@@ -4,7 +4,7 @@
 #
 Name     : configparser
 Version  : 3.7.1
-Release  : 36
+Release  : 37
 URL      : https://files.pythonhosted.org/packages/b6/a6/eceea7c5a5dbcf56815bed411c38cabd8a879386be10717b160e7362b5a2/configparser-3.7.1.tar.gz
 Source0  : https://files.pythonhosted.org/packages/b6/a6/eceea7c5a5dbcf56815bed411c38cabd8a879386be10717b160e7362b5a2/configparser-3.7.1.tar.gz
 Summary  : Updated configparser from Python 3.7 for Python 2.6+.
@@ -60,12 +60,12 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1549894163
+export SOURCE_DATE_EPOCH=1549897201
 python2 setup.py build -b py2
 python3 setup.py build -b py3
 
 %install
-export SOURCE_DATE_EPOCH=1549894163
+export SOURCE_DATE_EPOCH=1549897201
 rm -rf %{buildroot}
 python2 -tt setup.py build -b py2 install --root=%{buildroot} --force
 python3 -tt setup.py build -b py3 install --root=%{buildroot} --force
@@ -85,4 +85,6 @@ echo ----[ mark ]----
 
 %files python3
 %defattr(-,root,root,-)
+%exclude /usr/lib/python3.7/site-packages/backports/__init__.py
+%exclude /usr/lib/python3.7/site-packages/backports/__pycache__/__init__.cpython-37.pyc
 /usr/lib/python3*/*
