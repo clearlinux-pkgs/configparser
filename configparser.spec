@@ -4,7 +4,7 @@
 #
 Name     : configparser
 Version  : 3.7.2
-Release  : 38
+Release  : 39
 URL      : https://files.pythonhosted.org/packages/2a/76/4f2098f24ac00b063362c2f06f81dcf56d1714bd253e409ad22e9efd5891/configparser-3.7.2.tar.gz
 Source0  : https://files.pythonhosted.org/packages/2a/76/4f2098f24ac00b063362c2f06f81dcf56d1714bd253e409ad22e9efd5891/configparser-3.7.2.tar.gz
 Summary  : Updated configparser from Python 3.7 for Python 2.6+.
@@ -13,7 +13,6 @@ License  : MIT
 Requires: configparser-license = %{version}-%{release}
 Requires: configparser-python = %{version}-%{release}
 Requires: configparser-python3 = %{version}-%{release}
-Requires: Sphinx
 BuildRequires : buildreq-distutils23
 BuildRequires : buildreq-distutils3
 BuildRequires : pluggy
@@ -70,13 +69,12 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1550872621
-export LDFLAGS="${LDFLAGS} -fno-lto"
+export SOURCE_DATE_EPOCH=1550949117
 python2 setup.py build -b py2
 python3 setup.py build -b py3
 
 %install
-export SOURCE_DATE_EPOCH=1550872621
+export SOURCE_DATE_EPOCH=1550949117
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/configparser
 cp LICENSE %{buildroot}/usr/share/package-licenses/configparser/LICENSE
