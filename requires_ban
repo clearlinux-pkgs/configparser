@@ -1,2 +1,4 @@
 # This file contains runtime requirements that get picked up but are
 # undesirable. One entry per line, no whitespace.
+# An optional requirement from the setup.cfg, but no docs are being built...
+Sphinx
