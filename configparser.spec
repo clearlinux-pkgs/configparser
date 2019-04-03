@@ -4,7 +4,7 @@
 #
 Name     : configparser
 Version  : 3.7.3
-Release  : 41
+Release  : 42
 URL      : https://files.pythonhosted.org/packages/4a/4d/5d4c07cd28476ecad84ea5ad43961e50b6fd74cd24b9b81113650b4de6ee/configparser-3.7.3.tar.gz
 Source0  : https://files.pythonhosted.org/packages/4a/4d/5d4c07cd28476ecad84ea5ad43961e50b6fd74cd24b9b81113650b4de6ee/configparser-3.7.3.tar.gz
 Summary  : Updated configparser from Python 3.7 for Python 2.6+.
@@ -13,7 +13,6 @@ License  : MIT
 Requires: configparser-license = %{version}-%{release}
 Requires: configparser-python = %{version}-%{release}
 Requires: configparser-python3 = %{version}-%{release}
-BuildRequires : buildreq-distutils23
 BuildRequires : buildreq-distutils3
 BuildRequires : pluggy
 BuildRequires : py-python
@@ -25,15 +24,6 @@ BuildRequires : virtualenv
 %description
 .. image:: https://img.shields.io/pypi/v/configparser.svg
 :target: https://pypi.org/project/configparser
-
-%package legacypython
-Summary: legacypython components for the configparser package.
-Group: Default
-Requires: python-core
-
-%description legacypython
-legacypython components for the configparser package.
-
 
 %package license
 Summary: license components for the configparser package.
@@ -69,28 +59,22 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1551110095
-export LDFLAGS="${LDFLAGS} -fno-lto"
-python2 setup.py build -b py2
-python3 setup.py build -b py3
+export SOURCE_DATE_EPOCH=1554306895
+export MAKEFLAGS=%{?_smp_mflags}
+python3 setup.py build
 
 %install
-export SOURCE_DATE_EPOCH=1551110095
+export MAKEFLAGS=%{?_smp_mflags}
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/configparser
 cp LICENSE %{buildroot}/usr/share/package-licenses/configparser/LICENSE
-python2 -tt setup.py build -b py2 install --root=%{buildroot} --force
-python3 -tt setup.py build -b py3 install --root=%{buildroot} --force
+python3 -tt setup.py build  install --root=%{buildroot}
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
 echo ----[ mark ]----
 
 %files
 %defattr(-,root,root,-)
-
-%files legacypython
-%defattr(-,root,root,-)
-/usr/lib/python2*/*
 
 %files license
 %defattr(0644,root,root,0755)
