@@ -4,7 +4,7 @@
 #
 Name     : configparser
 Version  : 3.7.3
-Release  : 42
+Release  : 43
 URL      : https://files.pythonhosted.org/packages/4a/4d/5d4c07cd28476ecad84ea5ad43961e50b6fd74cd24b9b81113650b4de6ee/configparser-3.7.3.tar.gz
 Source0  : https://files.pythonhosted.org/packages/4a/4d/5d4c07cd28476ecad84ea5ad43961e50b6fd74cd24b9b81113650b4de6ee/configparser-3.7.3.tar.gz
 Summary  : Updated configparser from Python 3.7 for Python 2.6+.
@@ -59,7 +59,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1554306895
+export SOURCE_DATE_EPOCH=1554309220
 export MAKEFLAGS=%{?_smp_mflags}
 python3 setup.py build
 
