@@ -4,7 +4,7 @@
 #
 Name     : configparser
 Version  : 3.7.4
-Release  : 45
+Release  : 46
 URL      : https://files.pythonhosted.org/packages/e2/1c/83fd53748d8245cb9a3399f705c251d3fc0ce7df04450aac1cfc49dd6a0f/configparser-3.7.4.tar.gz
 Source0  : https://files.pythonhosted.org/packages/e2/1c/83fd53748d8245cb9a3399f705c251d3fc0ce7df04450aac1cfc49dd6a0f/configparser-3.7.4.tar.gz
 Summary  : Updated configparser from Python 3.7 for Python 2.6+.
