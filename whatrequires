@@ -1,2 +1,7 @@
 # This file contains recursive sources that require this package
 automaton
+ceph
+conda
+flake8
+importlib_metadata
+mercurial
