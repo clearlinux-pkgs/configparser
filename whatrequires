@@ -1,7 +1,10 @@
 # This file contains recursive sources that require this package
+amazon-efs-utils
 automaton
 ceph
 conda
 flake8
+flake8-builtins
 importlib_metadata
 mercurial
+python-zstandard

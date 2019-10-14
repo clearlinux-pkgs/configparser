@@ -4,7 +4,7 @@
 #
 Name     : configparser
 Version  : 4.0.2
-Release  : 49
+Release  : 50
 URL      : https://files.pythonhosted.org/packages/16/4f/48975536bd488d3a272549eb795ac4a13a5f7fcdc8995def77fbef3532ee/configparser-4.0.2.tar.gz
 Source0  : https://files.pythonhosted.org/packages/16/4f/48975536bd488d3a272549eb795ac4a13a5f7fcdc8995def77fbef3532ee/configparser-4.0.2.tar.gz
 Summary  : Updated configparser from Python 3.7 for Python 2.6+.
@@ -18,7 +18,6 @@ BuildRequires : pluggy
 BuildRequires : py-python
 BuildRequires : pytest
 BuildRequires : setuptools
-BuildRequires : setuptools-legacypython
 BuildRequires : setuptools_scm-python
 BuildRequires : tox
 BuildRequires : virtualenv
@@ -61,8 +60,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1568296146
-# -Werror is for werrorists
+export SOURCE_DATE_EPOCH=1571089467
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$CFLAGS -fno-lto "
@@ -75,7 +73,7 @@ python3 setup.py build
 export MAKEFLAGS=%{?_smp_mflags}
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/configparser
-cp LICENSE %{buildroot}/usr/share/package-licenses/configparser/LICENSE
+cp %{_builddir}/configparser-4.0.2/LICENSE %{buildroot}/usr/share/package-licenses/configparser/a1474494d96f6ddb3a9a0d767a09871ffc388faf
 python3 -tt setup.py build  install --root=%{buildroot}
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
@@ -89,7 +87,7 @@ rm -f %{buildroot}/usr/lib/python3.7/site-packages/backports/__pycache__/__init_
 
 %files license
 %defattr(0644,root,root,0755)
-/usr/share/package-licenses/configparser/LICENSE
+/usr/share/package-licenses/configparser/a1474494d96f6ddb3a9a0d767a09871ffc388faf
 
 %files python
 %defattr(-,root,root,-)
